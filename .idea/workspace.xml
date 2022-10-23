@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74de1ae7-9b23-4861-a08f-d422a891ff86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/by/HomeWork2/Task2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/by/HomeWork2/Task3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.by.by.HomeWork2.Task2">
+  <component name="RunManager" selected="Application.Task3">
     <configuration name="Task1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by.by.HomeWork1.Task1" />
       <module name="ExceptionHomeWork" />
@@ -62,6 +61,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="by.by.HomeWork1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.by.HomeWork2.Task3" />
+      <module name="ExceptionHomeWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.by.HomeWork2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,6 +109,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Task3" />
         <item itemvalue="Application.by.by.HomeWork2.Task2" />
         <item itemvalue="Application.by.by.HomeWork2.Task1" />
         <item itemvalue="Application.Task2" />
