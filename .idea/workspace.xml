@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74de1ae7-9b23-4861-a08f-d422a891ff86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/by/HomeWork2/Task4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/by/HomeWork3/Checker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/by/HomeWork3/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +43,13 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Task4">
-    <configuration name="Task2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="by.by.HomeWork1.Task2" />
+  <component name="RunManager" selected="Application.Program">
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.by.HomeWork3.Program" />
       <module name="ExceptionHomeWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.by.HomeWork1.*" />
+          <option name="PATTERN" value="by.by.HomeWork3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Program" />
         <item itemvalue="Application.Task4" />
         <item itemvalue="Application.Task3" />
         <item itemvalue="Application.by.by.HomeWork2.Task2" />
         <item itemvalue="Application.by.by.HomeWork2.Task1" />
-        <item itemvalue="Application.Task2" />
       </list>
     </recent_temporary>
   </component>
