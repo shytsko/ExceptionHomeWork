@@ -23,15 +23,39 @@
 
 package by.by.HomeWork3;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 public class Program {
 
     public static void main(String[] args) {
-        String testData = "Иванов Иван Иванович 01.01.1980 12345678 m";
+//        String testData = "Иванович Иванов 01.01.1980 m Иван 12345678";
+        String testData = "28.02.1999 Эльвира Учеткина Бронеславовна f 653432";
         int expectedCount = 6;
         int itemsCount = Checker.CheckData(testData, expectedCount);
 
         if(itemsCount==0) {
-            System.out.println("OK");
+            try {
+                Contact contact = Parser.ContactParse(testData);
+                System.out.println(contact);
+                Path file = Paths.get(contact.getLastName()+".contact");
+                String fileName = contact.getLastName()+".contact";
+                try {
+                    Files.write(Paths.get(contact.getLastName()+".contact"),
+                            (contact.toString()+'\n').getBytes(StandardCharsets.UTF_8),
+                            StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+                } catch (IOException e) {
+                    System.out.println("Ошибка записи в файл!");
+                    e.printStackTrace();
+                }
+            } catch (IllegalArgumentException ex) {
+                ex.printStackTrace();
+            }
         }
         else
             System.out.println(String.format("Введено %s данных, чем требуется!", itemsCount>0?"больше":"меньше"));
