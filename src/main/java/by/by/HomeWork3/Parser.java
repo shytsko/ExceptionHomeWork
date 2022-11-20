@@ -14,12 +14,11 @@ public class Parser {
         String phoneNumber = null;
         String gender = null;
 
-        Queue<String> tokens = new LinkedList<>();
-        tokens.addAll(Arrays.asList(input.split("\\s+")));
+        Queue<String> tokens = new LinkedList<>(Arrays.asList(input.split("\\s+")));
         while(!tokens.isEmpty()) {
             String token = tokens.poll();
             if(firstName == null) {
-                if (token.equals("Эльвира") || token.equals("Иван")) {
+                if (Checker.IsName(token)) {
                     firstName = token;
                     continue;
                 }

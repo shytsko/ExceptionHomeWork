@@ -24,7 +24,6 @@
 package by.by.HomeWork3;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,31 +33,41 @@ import java.nio.file.StandardOpenOption;
 public class Program {
 
     public static void main(String[] args) {
-//        String testData = "Иванович Иванов 01.01.1980 m Иван 12345678";
-        String testData = "28.02.1999 Эльвира Учеткина Бронеславовна f 653432";
+        String[] testData = {   "Иванович Иванов 01.01.1980 m Иван 12345678",
+                                "28.02.1980 Эльвира Учеткина Бронеславовна f 653432",
+                                "Ростислав 9488493",
+                                "Арзамасов m Ростислав 68465833 Анатольевич 05.12.1986 9488493",
+                                "Степанович Расчёскин Федор m 31.02.1963 566544677",
+                                "m 02.02.1990 3669455 Иванов Павел Андреевич"};
         int expectedCount = 6;
-        int itemsCount = Checker.CheckData(testData, expectedCount);
-
-        if(itemsCount==0) {
-            try {
-                Contact contact = Parser.ContactParse(testData);
-                System.out.println(contact);
-                Path file = Paths.get(contact.getLastName()+".contact");
-                String fileName = contact.getLastName()+".contact";
+        for (String stringContact : testData) {
+            System.out.println("<");
+            System.out.printf("Входная строка -> %s\n", stringContact);
+            int itemsCount = Checker.CheckDataCount(stringContact, expectedCount);
+            if (itemsCount == 0) {
+                System.out.println("Количество введенных данных соответствует");
                 try {
-                    Files.write(Paths.get(contact.getLastName()+".contact"),
-                            (contact.toString()+'\n').getBytes(StandardCharsets.UTF_8),
-                            StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-                } catch (IOException e) {
-                    System.out.println("Ошибка записи в файл!");
-                    e.printStackTrace();
+                    Contact contact = Parser.ContactParse(stringContact);
+                    System.out.printf("Контакт успешно распознан -> %s\n", contact);
+                    Path file = Paths.get(contact.getLastName() + ".contact");
+                    byte[] data = (contact.toString() + '\n').getBytes(StandardCharsets.UTF_8);
+                    try {
+                        Files.write(file, data, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+                        System.out.printf("Контакт успешно записан в файл %s", file.getFileName());
+                    } catch (IOException e) {
+                        System.out.println("Ошибка записи в файл! Контакт не сохранен!");
+                        e.printStackTrace(System.out);
+                    }
+                } catch (IllegalArgumentException ex) {
+                    System.out.println("Не удалось распознать контакт!");
+                    ex.printStackTrace(System.out);
                 }
-            } catch (IllegalArgumentException ex) {
-                ex.printStackTrace();
+            } else {
+                System.out.println(String.format("Введено %s данных, чем требуется!",
+                        itemsCount > 0 ? "больше" : "меньше"));
             }
+            System.out.println(">");
         }
-        else
-            System.out.println(String.format("Введено %s данных, чем требуется!", itemsCount>0?"больше":"меньше"));
     }
 
 }
